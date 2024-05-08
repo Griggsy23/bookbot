@@ -3,7 +3,12 @@ def main():
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     characters = get_character_count(text)
-    print(characters)
+    char_list = dict_list(characters)
+    print(f"--- Begin report of {book_path} ---")
+    print(f"{num_words} words found in the document")
+    print("")
+    print(char_list)
+    
 
 def get_character_count(text):
     character_count = {}
@@ -12,7 +17,13 @@ def get_character_count(text):
             character_count[i] += 1
         else:
             character_count[i] = 1
-    return character_count
+    return character_count       
+
+def dict_list(characters):
+    char_list = []
+    for key, val in characters.items():
+        char_list.append({key, val})
+    return char_list
 
 def get_num_words(text):
     words = text.split()
@@ -26,4 +37,3 @@ def get_book_text(path):
     
 
 main()
-
