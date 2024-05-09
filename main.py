@@ -20,6 +20,11 @@ def get_num_words(text):
     words = text.split()
     return len(words)
 
+
+def sort_on(d):
+    return d["num"]
+
+
 def chars_dict_to_sorted_list(num_chars_dict):
     sorted_list = []
     for ch in num_chars_dict:
